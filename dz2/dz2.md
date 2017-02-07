@@ -1,13 +1,19 @@
 ## Answer this questions, and comment why is this happening
 
 1) Assign the variable x to the value 5.
+```
 x = 5
+```
 
 2) What is the datatype of "Matt"?
+```
 String
+```
 
 3) x = 5. Is x a string?
+```
 no
+```
 
 4) What does this expression evaluate to?
 ```
