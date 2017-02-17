@@ -15,12 +15,12 @@ module GameTmp
       end
 
       @roads.each do |e|
-        # poisk perekrestkov
+        # poisk perekrestkov i check situacij na nem
 
       end
 
     end
 
   end
-  
+
 end
