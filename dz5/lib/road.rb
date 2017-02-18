@@ -46,7 +46,7 @@ module GameTmp
       @semafore.change_color!
       @transport.each do |e|
         if e.cur_point == @semafore.place_point || (@semafore.place_point - e.cur_point).abs <= e.speed
-          @cars_on_semafore.push e
+          @cars_on_semafore.push e if !e.broken?
           e.move! if (@semafore.color == :green || @semafore.color == :broken) && e.possible_movement?(road_length: @length)
 
         else
