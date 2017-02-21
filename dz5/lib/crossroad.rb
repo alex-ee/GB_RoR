@@ -52,35 +52,35 @@ module GameTmp
 
     end
 
-private
-    def check
-      @crossroads.each do |x|
-        crash = false
-        x[:roads].each do |r|
-          x[:roads].each do |z|
-            if (r.semafore.color == :green || r.semafore.color == :broken) && (z.semafore.color == :green || z.semafore.color == :broken)
-              r.cars_on_semafore.each do |car_r|
-                z.cars_on_semafore.each do |car_z|
+  private
+      def check
+        @crossroads.each do |x|
+          crash = false
+          x[:roads].each do |r|
+            x[:roads].each do |z|
+              if (r.semafore.color == :green || r.semafore.color == :broken) && (z.semafore.color == :green || z.semafore.color == :broken)
+                r.cars_on_semafore.each do |car_r|
+                  z.cars_on_semafore.each do |car_z|
 
-                  car_z.damage!
-                  car_r.damage!
-                  crash = true
+                    car_z.damage!
+                    car_r.damage!
+                    crash = true
+
+                  end
 
                 end
 
-              end
+              end if r != z
 
-            end if r != z
+            end
 
-          end
+          end if x[:roads].length > 1
 
-        end if x[:roads].length > 1
+          (puts "At the crossroad of roads:"; x[:roads].each { |e| p e.to_s }; puts "accident occurred!";) if crash
 
-        (puts "At the crossroad of roads:"; x[:roads].each { |e| p e.to_s }; puts "accident occurred!";) if crash
+        end
 
       end
-
-    end
 
   end
 

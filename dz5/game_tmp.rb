@@ -19,6 +19,7 @@ module GameTmp
     CrossRoad.new roads: roads
 
   end
+
 end
 
 puts "Hello! :)\n\n"
