@@ -56,7 +56,7 @@ module GameTmp
       transport = Transport.new vid: :car, speed: 1, start_point: 1
       assert_equal(true, transport.possible_movement?(road_length: 5))
 
-      transport = Transport.new vid: :car, speed: 1, start_point: 5
+      transport = Transport.new vid: :car, speed: -1, start_point: 5
       assert_equal(true, transport.possible_movement?(road_length: 5))
 
       transport = Transport.new vid: :car, speed: -1, start_point: 6
